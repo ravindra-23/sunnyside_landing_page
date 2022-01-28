@@ -1,0 +1,235 @@
+/* ------------------ */
+/* Custom Properties */
+/* ---------------- */
+
+:root {
+    /* Colors */
+
+    /* Primary colors */
+    --soft-red: hsl(7, 99%, 70%);
+    --yellow: hsl(51, 100%, 49%);
+    --dark-desaturated-cyan: hsl(167, 40%, 24%);
+    --dark-blue: hsl(198, 62%, 26%);
+    --dark-moderate-cyan: hsl(168, 34%, 41%);
+
+    /* Neutral colors */
+    --very-dark-desaturated-blue: hsl(212, 27%, 19%);
+    --very-dark-grayish-blue: hsl(213, 9%, 39%);
+    --dark-grayish-blue: hsl(232, 10%, 55%);
+    --grayish-blue: hsl(210, 4%, 67%);
+    --white: hsl(0, 0%, 100%);
+
+    /* Font families */
+
+    --ff-barlow: "Barlow", sans-serif;
+    --ff-fraunces: 'Fraunces', serif;
+}
+
+body {
+    font-size: 1.125rem;
+    font-family: 'Barlow', sans-serif;
+    text-align: center;
+    min-height: 100vh;
+    background-color: hsl(30, 100%, 99%);
+}
+
+/* -------------*/
+/*     RESET    */
+/* ------------- */
+
+/* Box-sizing */
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* Reset Margins */
+
+body,
+h1,
+h2,
+h3,
+h4,
+p,
+figure,
+picture {
+  margin: 0;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+    font-weight: 400;
+}
+
+a {
+    text-decoration: none;
+}
+
+ul {
+    list-style: none;
+}
+
+/* Make images to work easier with */
+
+img {
+    max-width: 100%;
+    display: block;
+}
+  
+  /* Inherit fonts for inputs and Buttons */
+  
+input,
+button,
+textarea,
+select {
+    font: inherit;
+}
+  
+  /* remove animations for those who turned them off */
+  
+@media (prefers-reduced-motion: reduce) {
+    
+    *,
+    *::before,
+    *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+ }
+}
+
+/* --------------- */
+/* Utility Classes */
+/* --------------- */
+
+/* general */
+
+.flex {
+    display: flex;
+    gap: var(--gap, 1rem); 
+}
+
+.grid {
+    display: grid;
+    gap: var(--gap, 1rem);
+}
+
+.d-block {
+    display: block;
+}
+
+.flow > *:where(:not(:first-child)) {
+    margin-top: var(--flow-space, 1rem);
+}
+
+.sr-only {
+    position: absolute; 
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px; 
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap; /* added line */
+    border: 0;
+}
+
+/* Typography */
+
+.ff-barlow { font-family: var(--ff-barlow); }
+.ff-fraunces { font-family: var(--ff-fraunces); }
+
+/* Header */
+
+.header {
+    background-image: url(../images/mobile/image-header.jpg);
+    background-size: cover;
+    height: 100%;
+    padding: 1.5rem 1rem;
+}
+
+.header-wrapper {
+    justify-content: space-between;
+    align-items: center;
+}
+
+.nav-link {
+    font-size: 1.5rem;
+    color: var(--dark-blue);
+}
+
+.title {
+    font-size: 2.5rem;
+    font-weight: 900;
+    text-transform: uppercase;
+    letter-spacing: .5rem;
+    color: var(--white);
+}
+
+.header-content {
+    margin-top: 4.5rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.arrow {
+    padding: 3rem 0 6.2rem;
+}
+
+.mobile-nav-toggle {
+    display: none;
+}
+
+@media (max-width: 375px) {
+
+    .navigation {
+        background: var(--white);
+        position: fixed;
+        z-index: 1000;
+        inset: 10% 10% 50% 10%;
+        padding: 2rem;
+        flex-direction: column;
+        justify-content: space-evenly;
+        margin: 0;
+        list-style: none;
+        transform: translateX(120%);
+        transition: transform 500ms ease-in-out;
+    }
+
+    .mobile-nav-toggle {
+        display: block;
+        position: absolute;
+        z-index: 2000;
+        right: 1rem;
+        top: 1.5rem;
+        background: transparent;
+        background-image: url(../images/icon-hamburger.svg);
+        background-repeat: no-repeat;
+        background-position: center;
+        width: 1.5rem;
+        aspect-ratio: 1;
+        border: 0;
+    }
+
+    .mobile-nav-toggle[aria-expanded="true"] {
+        background-image: url(../images/icon-close.svg);
+    }
+
+    .mobile-nav-toggle:focus-visible {
+        outline: 5px solid white;
+        outline-offset: 5px;
+    }
+
+    .navigation[data-visible="true"] {
+        transform: translateX(0);
+    }
+}

@@ -4,9 +4,41 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Sunnyside Agency Landing Page</title>
+  <link rel="icon" type="image/png" sizes="32x32" href="./assets/favicon-32x32.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Barlow:wght@600&family=Fraunces:wght@700;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <title>Frontend Mentor | Sunnyside Agency Landing Page</title>
 </head>
 <body>
-  <h1>Working</h1>
+  <header class="header">
+    <div class="nav-wrapper flex">
+        <div class="logo">
+          <img src="../images/logo.svg" class="logo-image" alt="logo icon"/>
+        </div>
+        <button class="mobile-nav-toggle" aria-controls="navigation" aria-expanded="false"><span class="sr-only">Menu</span></button>
+    
+        <nav>
+          <ul id="navigation" data-visible="false" class="navigation flex">
+            <li><a class="nav-link" href="">About</a></li>
+            <li><a class="nav-link" href="">Services</a></li>
+            <li><a class="nav-link" href="">Projects</a></li>
+            <li class="active"><a class="nav-link" href="">Contact</a></li>
+          </ul>
+        </nav>
+    </div>
+    <div class="header-content">
+        <div class="header-title">
+          <h2 class="title ff-fraunces">We are creatives</h2>
+        </div>
+    
+        <div class="arrow">
+          <img src="../images/icon-arrow-down.svg" class="arrow-image" alt="arrow facing downward"/>
+        </div>
+    </div>
+  </header>
+
+  <script src="script.js"></script>
 </body>
 </html>

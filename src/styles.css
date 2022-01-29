@@ -126,6 +126,18 @@ select {
     display: block;
 }
 
+.lh {
+    line-height: 1.7;
+}
+
+.ls {
+    letter-spacing: .2rem;
+}
+
+.uppercase {
+    text-transform: uppercase;
+}
+
 .flow > *:where(:not(:first-child)) {
     margin-top: var(--flow-space, 2rem);
 }
@@ -190,6 +202,10 @@ select {
 }
 
 @media (max-width: 375px) {
+
+    .desktop {
+        display: none;
+    }
 
     .navigation {
         background: var(--white);
@@ -274,5 +290,43 @@ select {
 
     .testimonial-section {
         padding: 3.1rem 2rem;
+    }
+
+    .testimonial-title {
+        font-size: 1.2rem;
+    }
+
+    .testimonial-title,
+    .client-designation {
+        color: var(--grayish-blue);
+    }
+
+    .client-info {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding-block: 3rem;
+    }
+
+    .client-image,
+    .client-review {
+        color: var(--very-dark-grayish-blue);
+        margin-bottom: 2rem;
+    }
+
+    .client-image {
+        width: 60px;
+        height: 60px;
+        border-radius: 50%;
+    }
+
+    .client-name {
+        margin-bottom: 1rem;
+    }
+
+    .image-gallery {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: repeat(2, 1fr);
     }
 }
